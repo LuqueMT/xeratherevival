@@ -1,0 +1,180 @@
+#header{
+    /*align-items: center;*/
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+#menu{
+    /*list-style: none;*/
+    gap: 5rem;
+}
+#btn-mobile{
+    display: none;
+}
+
+/*------------------
+    MOBILE SCREAM
+--------------------*/
+
+@media (max-width: 600px){
+    #nav{
+        position: relative;
+    }
+    #logo{
+        position: absolute;
+        font-size: 20px;
+        left: 1px;
+    }
+    #btn-mobile{
+        display: block;
+        position: absolute;
+        right: 1%;
+        color: #5252f3;
+        font-size: 20px;
+    }
+    #menu{
+        gap: 2rem;
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        background: linear-gradient(115deg, #5252f3 10%, #9f01ea 70%);
+        height: 0px;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #menu{
+        margin-right: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #menu li{
+        margin-left: 0px;
+        padding: 10px;
+    }
+    #nav.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a{
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    #hamburguer{
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #hamburguer::after, #hamburguer::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer{
+        border-top-color: transparent;
+    }
+    #nav.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    .btn{
+        /* background-color: var(--background-color); */
+        color: rgb(255, 255, 255);
+        padding: .5rem 1em;
+        border: none;
+        outline: none;
+        position: relative;
+        cursor: pointer;;
+        /* --background-color: #fff; */
+        --border-size: 2px;
+        --accent-color: #0af;
+    }
+    .btn.btn-border-pop::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        border: none;
+        
+    }
+    .btn.btn-border-pop:hover::before,
+    .btn.btn-border-pop:focus::before{
+        top: calc(var(--border-size) * -2);
+        left: calc(var(--border-size) * -2);
+        right: calc(var(--border-size) * -2);
+        bottom: calc(var(--border-size) * -2);
+    }
+}
+
+@media (max-width: 600px){
+    .container-body{
+        position: relative;
+    }
+    .content{
+      
+        width: 100%;
+        height: 290px;
+        background: #191919;
+        display: flex;
+        align-items: center;
+        flex-direction: column;   
+    }
+    .content p{
+        text-align: justify;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 20px;
+        text-indent: 25px;
+        width: 100%;
+        height: 100%;
+    }
+    .content h2{
+        color:white;
+        text-decoration: underline #5252f3;
+    }
+    .content2{
+        
+        width: 100%;
+        height: 290px;
+        background: #252525;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content2 p{
+        text-align: justify;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 20px;
+        text-indent: 25px;
+    }
+    .content2 h2{
+        color: white;
+        text-decoration: underline #5252f3;
+    }
+}
